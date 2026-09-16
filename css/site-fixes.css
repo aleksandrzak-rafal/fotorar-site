@@ -38,6 +38,37 @@
   }
 }
 
+/* The mobile menu has no useful links; keep only the contact CTA visible. */
+@media screen and (max-width: 991px) {
+  .w-nav[data-collapse="medium"] .nav-menu {
+    display: flex !important;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .w-nav[data-collapse="medium"] .nav-menu_wrap {
+    display: flex;
+    flex-flow: row;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .w-nav[data-collapse="medium"] .nav-left,
+  .w-nav[data-collapse="medium"] .nav_button {
+    display: none !important;
+  }
+
+  .w-nav[data-collapse="medium"] .button.is-nav {
+    display: flex;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .waves-image-gallery-1 {
     transition: none;
