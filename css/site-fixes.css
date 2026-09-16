@@ -3,6 +3,22 @@
   transition: opacity 700ms ease, transform 700ms ease;
 }
 
+/* Keep the header clear over the hero video and remove the inset video frame. */
+.nav_component,
+.nav-wrap {
+  background-color: transparent;
+}
+
+.nav-wrap {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.hero-background,
+.video-placeholder {
+  border-radius: 0;
+}
+
 .waves-image-gallery-1.is-gallery-visible {
   opacity: 1 !important;
   transform: translate3d(0, 0, 0) !important;
