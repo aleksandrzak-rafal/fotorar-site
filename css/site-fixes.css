@@ -9,6 +9,35 @@
   visibility: visible !important;
 }
 
+/* Keep the footer wordmark inside the viewport on smaller screens. */
+@media screen and (max-width: 767px) {
+  .footer-bottom.font-zodiak {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .footer-text {
+    flex: 0 1 auto;
+    max-width: 100%;
+    white-space: nowrap;
+    font-size: clamp(4rem, 15vw, 7rem);
+    letter-spacing: -0.04em;
+  }
+
+  .footer-image {
+    width: clamp(3rem, 11vw, 5rem);
+    height: auto;
+    flex: 0 0 auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer-image {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .waves-image-gallery-1 {
     transition: none;
