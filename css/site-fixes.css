@@ -1,0 +1,16 @@
+/* Gallery images should reveal once and remain visible after the scroll trigger. */
+.waves-image-gallery-1 {
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.waves-image-gallery-1.is-gallery-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waves-image-gallery-1 {
+    transition: none;
+  }
+}
