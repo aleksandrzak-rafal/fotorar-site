@@ -1,4 +1,35 @@
 (() => {
+  const contactButtons = [
+    ...document.querySelectorAll('.button.is-nav[href="#footer"]'),
+  ];
+
+  contactButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const footer = document.querySelector('#footer');
+
+      if (!footer) {
+        return;
+      }
+
+      event.preventDefault();
+      history.pushState(null, '', '#footer');
+
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches;
+      const alignFooter = (behavior) => {
+        footer.scrollIntoView({ behavior, block: 'start' });
+      };
+
+      alignFooter(reducedMotion ? 'auto' : 'smooth');
+
+      // Lazy images can change the footer's offset while the page is moving.
+      window.setTimeout(() => alignFooter('auto'), 700);
+      window.setTimeout(() => alignFooter('auto'), 1500);
+      window.setTimeout(() => alignFooter('auto'), 3000);
+    });
+  });
+
   const galleryImages = [...document.querySelectorAll(".waves-image-gallery-1")];
 
   if (!galleryImages.length) {
